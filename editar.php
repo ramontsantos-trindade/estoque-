@@ -5,7 +5,6 @@ require 'validar.php';
 $id = (int) ($_GET['id'] ?? $_POST['id'] ?? 0);
 $erros = [];
 
-// Busca o produto atual
 $stmt = $conn->prepare('SELECT * FROM produtos WHERE id = ?');
 $stmt->bind_param('i', $id);
 $stmt->execute();
